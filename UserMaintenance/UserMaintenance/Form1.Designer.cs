@@ -35,6 +35,7 @@ namespace UserMaintenance
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnFile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -87,11 +88,22 @@ namespace UserMaintenance
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnFile
+            // 
+            this.btnFile.Location = new System.Drawing.Point(202, 114);
+            this.btnFile.Name = "btnFile";
+            this.btnFile.Size = new System.Drawing.Size(244, 33);
+            this.btnFile.TabIndex = 6;
+            this.btnFile.Text = "button 2";
+            this.btnFile.UseVisualStyleBackColor = true;
+            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(453, 277);
+            this.Controls.Add(this.btnFile);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.txtLastName);
@@ -113,6 +125,7 @@ namespace UserMaintenance
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnFile;
     }
 }
 
