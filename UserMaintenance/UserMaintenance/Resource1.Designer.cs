@@ -61,11 +61,11 @@ namespace UserMaintenance {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hozzáadás.
+        ///   Looks up a localized string similar to Törlés.
         /// </summary>
-        internal static string Add {
+        internal static string Delete {
             get {
-                return ResourceManager.GetString("Add", resourceCulture);
+                return ResourceManager.GetString("Delete", resourceCulture);
             }
         }
         

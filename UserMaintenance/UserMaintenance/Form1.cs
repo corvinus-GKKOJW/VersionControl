@@ -24,7 +24,7 @@ namespace UserMaintenance
 
             //ne lehessen csak keresztnevet megadni
             lblFirstName.Enabled = false;
-            btnAdd.Text = Resource1.Add;
+            btnAdd.Text = Resource1.Delete;
             btnFile.Text = Resource1.File;
 
             //listbox
@@ -35,13 +35,13 @@ namespace UserMaintenance
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            var u = new User()
+            /*var u = new User()
             {
-                /*LastName = txtLastName.Text,
-                FirstName = txtFirstName.Text*/
+                LastName = txtLastName.Text,
+                FirstName = txtFirstName.Text
                 FullName = txtLastName.Text
             };
-            users.Add(u);
+            users.Add(u);*/
         }
 
         private void btnFile_Click(object sender, EventArgs e)
