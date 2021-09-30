@@ -23,8 +23,6 @@ namespace UserMaintenance
             /*lblFirstName.Text = Resource1.FirstName;*/
 
             //ne lehessen csak keresztnevet megadni
-            lblFirstName.Enabled = false;
-            btnAdd.Text = Resource1.Add;
             btnFile.Text = Resource1.File;
 
             //listbox
@@ -48,8 +46,8 @@ namespace UserMaintenance
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.InitialDirectory = Application.StartupPath;
-            sfd.Filter = "Comma Separated Values (*.csv)|*.csv";
-            sfd.DefaultExt = "csv";
+            sfd.Filter = "Text Files | *.txt";
+            sfd.DefaultExt = "txt";
             sfd.AddExtension = true;
             if (sfd.ShowDialog() != DialogResult.OK) return;
             using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
