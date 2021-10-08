@@ -86,7 +86,6 @@ namespace UserMaintenance
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "button1";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnFile
             // 
@@ -96,7 +95,6 @@ namespace UserMaintenance
             this.btnFile.TabIndex = 6;
             this.btnFile.Text = "button 2";
             this.btnFile.UseVisualStyleBackColor = true;
-            this.btnFile.Click += new System.EventHandler(this.btnFile_Click);
             // 
             // Form1
             // 
