@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserMaintenance", "UserMain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "adatbazis_gkkojw", "adatbazis_gkkojw\adatbazis_gkkojw.csproj", "{2215D3D6-17AC-4DBF-9C9E-9986DC9B8B53}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VaR", "VaR\VaR.csproj", "{DF0ACC51-EE95-43D2-8805-17103012F579}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2215D3D6-17AC-4DBF-9C9E-9986DC9B8B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2215D3D6-17AC-4DBF-9C9E-9986DC9B8B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2215D3D6-17AC-4DBF-9C9E-9986DC9B8B53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF0ACC51-EE95-43D2-8805-17103012F579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF0ACC51-EE95-43D2-8805-17103012F579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF0ACC51-EE95-43D2-8805-17103012F579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF0ACC51-EE95-43D2-8805-17103012F579}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
