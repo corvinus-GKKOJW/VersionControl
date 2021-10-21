@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,9 @@ namespace VaR
         List<Tick> Ticks;
 
         List<PortfolioItem> Portfolio = new List<PortfolioItem>();
+
+        List<decimal> Nyereségek = new List<decimal>();
+
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +29,6 @@ namespace VaR
 
             CreatePortfolio();
 
-            List<decimal> Nyereségek = new List<decimal>();
             int intervallum = 30;
             DateTime kezdőDátum = (from x in Ticks select x.TradingDay).Min();
             DateTime záróDátum = new DateTime(2016, 12, 30);
@@ -41,6 +44,8 @@ namespace VaR
                                       orderby x
                                       select x).ToList();
             MessageBox.Show(nyereségekRendezve[nyereségekRendezve.Count() / 5].ToString());
+
+            SaveToFile();
         }
 
         public void CreatePortfolio()
@@ -70,6 +75,23 @@ namespace VaR
                 value += (decimal)last.Price * item.Volume;
             }
             return value;
+        }
+
+        public void SaveToFile()
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (sfd.ShowDialog()==DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(sfd.FileName))
+                {
+                    sw.WriteLine("Időszak\tNyereség");
+                    for (int i = 0; i < Nyereségek.Count; i++)
+                    {
+                        sw.WriteLine((i + 1).ToString() + "\t" + Nyereségek[i]);
+                    }
+                }
+            }
         }
     }
 }
