@@ -51,7 +51,7 @@ namespace UnitTestExample.Test
                 TestCase("Megfelelo7", true)
             ]
 
-            public bool ValidatePassword (string pw)
+            public bool ValidatePassword (string pw, bool expectedResult)
             {
                 var lowerCase = new Regex(@"[a-z]+");
                 var upperCase = new Regex(@"[A-Z]+");
@@ -81,12 +81,12 @@ namespace UnitTestExample.Test
 
             [
                 Test,
-                TestCase("gkkojw@uni-corvinus", "Nemmegfelelo"), //nincs benne szám
-                TestCase("gkkojw.uni-corvinus.hu", "Abcd1234"), //email hibás
-                TestCase("gkkojw@uni-corvinus.hu", "igysejomeg"), //nincs benne nagybetű
-                TestCase("gkkojw@uni-corvinus.hu", "HIANYZIK"), //nincs benne kisbetű
-                TestCase("gkkojw@uni-corvinus.hu", "Rovid78") //túl rövid
-]
+                TestCase("gkkojw.uni-corvinus.hu", "Abcd1234"), //email (elvileg) nem jó
+                TestCase("gkkojw@uni-corvinus.hu", "abcd1234"), //csupa kisbetű
+                TestCase("gkkojw@uni-corvinus.hu", "ABCD1234"), //csupa nagybetű
+                TestCase("gkkojw@uni-corvinus.hu", "abcdABCD"), //nincs benne szám
+                TestCase("gkkojw@uni-corvinus.hu", "Ab1234"), //túl rövid
+            ]
             public void TestRegisterValidateException(string email, string password)
             {
                 //Arrange
