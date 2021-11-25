@@ -1,14 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Activities;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UnitTestExample.Controllers;
 
@@ -105,6 +98,24 @@ namespace UnitTestExample.Test
 
                 //Assert
             }
+
+            /*
+            // Arrange
+            var accountServiceMock = new Mock<IAccountManager>(MockBehavior.Strict);
+            accountServiceMock
+            .Setup(m => m.CreateAccount(It.IsAny<Account>()))
+            .Returns<Account>(a => a);
+            var accountController = new AccountController();
+            accountController.AccountManager = accountServiceMock.Object;
+
+            // Act
+            var actualResult = accountController.Register(email, password);
+
+            // Assert
+            Assert.AreEqual(email, actualResult.Email);
+            Assert.AreEqual(password, actualResult.Password);
+            Assert.AreNotEqual(Guid.Empty, actualResult.ID);
+            accountServiceMock.Verify(m => m.CreateAccount(actualResult), Times.Once);*/
         }
     }
 }
