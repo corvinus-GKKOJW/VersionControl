@@ -21,7 +21,9 @@ namespace mikroszimulacio
         Random rng = new Random(1234);
 
         int lastYear;
-        string filePath;
+
+        List<int> malePop = new List<int>();
+        List<int> femalePop = new List<int>();
 
         public Form1()
         {
@@ -135,7 +137,10 @@ namespace mikroszimulacio
                 int NumberOfFemales = (from x in Population
                                        where x.Gender == Gender.Female && x.IsAlive
                                        select x).Count();
-                Console.WriteLine(string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, NumberOfMales, NumberOfFemales));
+                //Console.WriteLine(string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, NumberOfMales, NumberOfFemales));
+
+                malePop.Add(NumberOfMales);
+                femalePop.Add(NumberOfFemales);
 
                 //teszt
                 //textBox1.Text = (string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, NumberOfMales, NumberOfFemales));
@@ -144,7 +149,11 @@ namespace mikroszimulacio
 
         private void buttonStart_Click(object sender, EventArgs e)
         {
+            richTextBox1.Clear();
+            malePop.Clear();
+            femalePop.Clear();
             Simulation();
+            DisplayResults();
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -160,10 +169,17 @@ namespace mikroszimulacio
                 ofd.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    filePath = ofd.FileName;
+                    fileTextBox.Text = ofd.FileName;
                 }
             }
-            fileTextBox.Text = filePath;
+        }
+
+        public void DisplayResults()
+        {
+            for (int i = 2004; i < lastYear; i++)
+            {
+                richTextBox1.Text = "Szimulációs év: " + i + "\n" + "\t" + "Fiúk: " + malePop + "\n" + "\t" + "Lányok: " + femalePop;
+            }
         }
     }
 }
