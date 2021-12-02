@@ -8,8 +8,8 @@ namespace mikroszimulacio.Entities
 {
     public class DeathProb
     {
+        public Gender Gender { get; set; }
         public int Age { get; set; }
-        public int NumberOfChildren { get; set; }
         public double DeathProbability { get; set; }
     }
 }
