@@ -18,6 +18,8 @@ namespace mikroszimulacio
         List<BirthProb> BirthProbabilities = new List<BirthProb>();
         List<DeathProb> DeathProbabilities = new List<DeathProb>();
 
+        Random rng = new Random(69420);
+
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +27,22 @@ namespace mikroszimulacio
             Population = GetPopulation(@"C:\Windows\Temp\nép.csv");
             BirthProbabilities = GetBirthProbs(@"C:\Windows\Temp\születés.csv");
             DeathProbabilities = GetDeathProbs(@"C:\Windows\Temp\halál.csv");
+
+            for (int year = 2005; year <= 2024; year++)
+            {
+                for (int i = 0; i < Population.Count; i++)
+                {
+                    //sim
+                }
+
+                int NumberOfMales = (from x in Population
+                                     where x.Gender == Gender.Male && x.IsAlive
+                                     select x).Count();
+                int NumberOfFemales = (from x in Population
+                                       where x.Gender == Gender.Female && x.IsAlive
+                                       select x).Count();
+                Console.WriteLine(string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, NumberOfMales, NumberOfFemales));
+            }
         }
 
         public List<Person> GetPopulation(string csvpath)
